@@ -1,7 +1,13 @@
 # Processor_Design
-Designed and Built a fully functioning single and pipelined processors in Verilog.
+Designed and Built a fully functioning single and pipelined processors in Verilog
 
-## * Single Processor
+## Assembler
+- Generate mif file using assembly file as an input file.
+### Command
+python Assembler.py <input-Assembly-file> <Name-of-Ouput-File>
+
+## Single Processor
+- 
 
 
 
