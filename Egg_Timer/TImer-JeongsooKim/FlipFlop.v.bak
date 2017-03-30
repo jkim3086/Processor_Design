@@ -1,0 +1,12 @@
+module FlipFlop(reset, clk, dIn, dOut);
+	input reset, clk;
+	input [3:0] dIn;
+	
+	output reg [3:0] dOut;
+	
+	always @(posedge reset or posedge clk) begin
+		dOut <= dIn;
+		if (reset)
+			dOut <= 0;
+	end
+endmodule

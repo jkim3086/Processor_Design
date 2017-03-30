@@ -1,0 +1,13 @@
+module Debouncer(clk, reset, pb, dpb)
+input clk;
+input pb;
+output dpb;
+
+wire ff_out1;
+wire ff_out2;
+
+FlipFlop ff1(clk, reset, pb, ff_out1);
+FlipFlop ff2(clk, reset, ff_out1, ff_out2);
+
+assign dpb = ff_out1 ~^ ff_out2;
+endmodule

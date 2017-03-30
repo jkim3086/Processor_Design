@@ -1,0 +1,198 @@
+module TimerController(CLOCK_50, SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3);
+	input CLOCK_50;
+	input[9:0] SW;
+	input[2:0] KEY;
+ 	output[9:0] LEDR; 
+	output[6:0] HEX0;
+	output[6:0] HEX1;
+	output[6:0] HEX2;
+	output[6:0] HEX3;
+	
+	parameter[2:0] Reset = 3'b000;
+	parameter[2:0] SetSeconds = 3'b001;
+	parameter[2:0] SetMinutes = 3'b010;
+	parameter[2:0] Run_Time = 3'b011;
+	parameter[2:0] Stop_Time = 3'b100;
+	parameter[2:0] TurnLight = 3'b101;
+	reg[2:0] State = 3'b000 // Initial state is equal to 'Reset' stage
+	
+	wire Reset; 
+	assign Reset = KEY[0];
+	wire[15: 0] total_time;
+
+	
+	// Actual Time values
+	reg[3:0] first_sec = 4'b0000;
+	reg[3:0] second_sec = 4'b0000;
+	reg[3:0] first_min = 4'b0000;
+	reg[3:0] second_min = 4'b0000;
+	
+	// Permission values
+	reg sec_set = 1'b0;
+	reg min_set = 1'b0;
+	reg sec_decrease = 1'b0;
+	reg min_decrease = 1'b0;
+	reg zero_? = 1'b0;
+	reg lightON = 1'b0;
+	
+	wire sec-min; 
+	FlipFlop trans1 (KEY[0], KEY[1], sec-min); // State transition between SetSeconds and SetMinutes
+	wire run-stop;
+	FlipFlop trans2 (KEY[0], KEY[2], run-stop); // State transition between Run_Time and Stop_Time in Step 4 Run Timer
+
+	always @(negedge CLOCK_50) begin
+		
+		// Checking reset value if it is equal to '0', then good to go to the next stage
+		if (Reset == 1'b0) begin
+			// Change the current state to the next state
+			State <= SetSeconds;
+		end 
+		/*
+		else if (Reset == 1'b1) begin // KEY[0] is high
+			// Reset all values
+			first_sec <= 4'b0000;
+			second_sec <= 4'b0000;
+			first_min <= 4'b0000;
+			second_min <= 4'b0000;
+			
+			// No LED
+			LEDR <= 10'b0000000000;			
+		end 
+		*/
+		
+		// Resetting all permission values before assigning new values
+		sec_set <= 1'b0;
+		min_set <= 1'b0;
+		sec_decrease <= 1'b0;
+		min_decrease <= 1'b0;
+		//zero_? <= 1'b0;
+		lightON <= 1'b0;
+		
+		if(State == SetSeconds) begin				
+			// Checking KEY[1] value using tran1 modules
+			if (sec-min == 1'b1) begin
+				State <= SetMinutes;
+			end else begin
+				sec_set <= 1'b1;
+			end
+		end
+				
+		if(State == SetMinutes) begin 
+			if (run-stop == 1'b1) begin
+				State <= Run_Time;
+			end else begin
+				min_set <= 1'b1;
+			end 
+		end
+		
+		if(State == Run_Time || State == Stop_Time) begin
+			if (run-stop == 1'b0) begin
+				State <= Stop_Time;
+			end else if(run-stop == 1'b1)begin
+				State <= Run_Time;
+			end
+		end
+		
+		if(State == Run_Time) begin
+			if (zero_? == 1'b1) begin
+				State <= TurnLight;
+			/*end else if (run-stop == 1'b0) begin
+				State <= Stop_Time; */
+			end else begin 
+				sec_decrease <= 1'b1;
+				min_decrease <= 1'b1;
+			end
+		end
+				
+		if(State == Stop_Time) begin 
+			if (zero_? == 1'b1) begin
+				State <= TurnLight;
+			/*end else if (run-stop == 1'b1) begin
+				State <= Run_Time; */
+			end
+		end
+		
+		if(State == TurnLight) begin
+			lightON <= 1'b1;
+		end
+			
+	end
+	
+	//TimeManage timeCalc(Reset, CLK, State, (sec_set || min_set), (sec_decrease || min_decrease), SW[7:0], total_time, LEDR, ZERO_?);
+	TimeManage timeCalc(Reset, CLK, State, (sec_set || min_set), (sec_decrease || min_decrease), SW[7:0], total_time, ZERO_?);
+	dec2_7seg display_sec1(total_time[3:0], HEX0);
+	dec2_7seg display_sec1(total_time[7:4], HEX1);
+	dec2_7seg display_sec1(total_time[11:8], HEX2);
+	dec2_7seg display_sec1(total_time[15:12], HEX3);
+	assign LEDR = (ZERO_? == 1'b1) ? 10'b1111111111 : 10'b0000000000;
+	
+	
+endmodule
+
+
+
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////// */
+
+//module TimeManage(Reset, CLK, State, SET, Decrease, timeIn, timeSet, LEDR, ZERO_?);
+module TimeManage(Reset, CLK, State, SET, Decrease, timeIn, ZERO_in, timeSet, ZERO_out);
+	input reset, clk, wrtEn, cntEn;
+	input[7: 0] timeIn;
+	input ZERO_in;
+	
+	//output[9:0] LEDR;
+	output[15: 0] timeSet;
+	output ZERO_out;
+	/*
+	 * [3:0] --> first digit of second
+	 * [7:4] --> second digit of second
+	 * [11:8] --> first digit of minute
+	 * [15:12] --> second digit of minute
+	 */
+	
+	//reg[9:0] LEDR_res;
+	reg[15: 0] timeResult;
+	reg Zero = ZERO_in;
+	
+	always @(negedge clk) begin
+		if (Reset == 1'b0)
+			timeSet <= 16'd0;
+			Zero <= 1'b0;
+			//LEDR <= 10'b0000000000;
+		else if (SET == 1'b1) begin
+			if(State == 3'b001) begin // SetSeconds state
+				timeResult[7:0] <= timeIn[7:0];
+			end else if(State == 3'b010) begin // SetMinutes state
+				timeResult[15:8] <= timeIn[7:0];
+			end
+ 		end else if (Decrease == 1'b1 && (State > 3'b011 && State <= 3'b101)) begin
+			if(timeResult[3:0] > 4'd0) begin
+				timeResult[3:0] <= timeResult[3:0] - 4'd1;
+			end else if(timeResult[7:4] > 4'd0) begin
+				timeResult[3:0] <= 4'd9;
+				timeResult[7:4] <= timeResult[7:4] - 4'd1;
+			end else if(timeResult[11:8] > 4'd0) begin
+				timeResult[3:0] <= 4'd9;
+				timeResult[7:4] <= 4'd5;
+				timeResult[11:8] <= timeResult[11:8] - 4'd1;
+			end else if(timeResult[15:12] > 4'd0) begin
+				timeResult[3:0] <= 4'd9;
+				timeResult[7:4] <= 4'd5;
+				timeResult[11:8] <= 4'd9;
+				timeResult[15:12] <= timeResult[15:12] - 4'd1; // what if given time is 99 seconds
+			end
+			if(timeResult[15:0] == 16'd0) begin
+				//LEDR_res <= 10'b1111111110;
+				Zero <= 1'b1;
+			end
+		end
+	end
+	//LEDR = LEDR_res;
+	timeSet = timeResult;
+	ZERO_out = Zero;
+endmodule	
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+

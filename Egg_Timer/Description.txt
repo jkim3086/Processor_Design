@@ -1,0 +1,1 @@
+Time will count down from a time value, an user sets,to zero.
