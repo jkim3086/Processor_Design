@@ -1,0 +1,54 @@
+`timescale 1ns / 1ps
+
+module testbench();
+	
+	parameter bit_width = 8;
+	parameter op_bit_width = 2;
+	/*
+	 * Opcode
+	 * 00 -> Addition
+	 * 01 -> Subtraction
+	 * 10 -> Multiplication
+	 * 11 -> Division
+	 */
+
+	reg clk;
+	reg [op_bit_width-1:0] opcode;
+	reg [bit_width-1:0] data_in1;
+	reg [bit_width-1:0] data_in2;
+	wire [bit_width-1:0] data_out;
+	
+	ALU test1 (clk, data_in1, data_in2, opcode, data_out);
+	
+	always begin
+		clk = ~clk;
+		#5;
+	end
+	
+	initial begin
+		clk = 0;
+		#10;
+		
+		opcode = 2'b00; // Addition
+		data_in1[bit_width-1:0] = 8'b00001111;
+		data_in2[bit_width-1:0] = 8'b11110000;
+		#20;
+		
+		opcode = 2'b01; // Subtraction
+		data_in1[bit_width-1:0] = 8'b10000000;
+		data_in2[bit_width-1:0] = 8'b00000001;
+		#20;
+		
+		opcode = 2'b10; // Multiplication
+		data_in1[bit_width-1:0] = 8'b00000100; // 4
+		data_in2[bit_width-1:0] = 8'b00001000; // 8
+		#20;
+		
+		opcode = 2'b11; // Division
+		data_in1[bit_width-1:0] = 8'b00010000; // 16
+		data_in2[bit_width-1:0] = 8'b00000100; // 4
+		#20;
+		$stop;
+	end
+	
+endmodule

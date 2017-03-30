@@ -1,0 +1,57 @@
+//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/InstMemory.v {1 {vlog -work work //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/InstMemory.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module InstMemory
+
+Top level modules:
+	InstMemory
+
+} {} {}} //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Adder.v {1 {vlog -work work //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Adder.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}} //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Shifter.v {1 {vlog -work work //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Shifter.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Shifter
+
+Top level modules:
+	Shifter
+
+} {} {}} //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux2x1.v {1 {vlog -work work //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux2x1.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Mux2x1
+
+Top level modules:
+	Mux2x1
+
+} {} {}} //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SignExtension.v {1 {vlog -work work //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SignExtension.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module SignExtension
+
+Top level modules:
+	SignExtension
+
+} {} {}} //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux4x1.v {1 {vlog -work work //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux4x1.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Mux4x1
+
+Top level modules:
+	Mux4x1
+
+} {} {}} //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SevenSeg.v {1 {vlog -work work //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SevenSeg.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module SevenSeg
+
+Top level modules:
+	SevenSeg
+
+} {} {}} //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/DataMemory.v {1 {vlog -work work //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/DataMemory.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module DataMemory
+
+Top level modules:
+	DataMemory
+
+} {} {}}

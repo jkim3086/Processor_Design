@@ -1,0 +1,132 @@
+module SCProcController(inst, cond_flag, rd, rs1, rs2, alu_op, pc_sel, rf_wrt_data_sel, alu_in2_sel, rf_wrt_en, mem_wrt_en);
+parameter INST_BIT_WIDTH = 32;
+parameter REG_INDEX_BIT_WIDTH = 4;
+parameter ALU_OP_WIDTH = 5;
+
+input [INST_BIT_WIDTH - 1 : 0] inst;
+input cond_flag;
+output [REG_INDEX_BIT_WIDTH - 1 : 0] rd;
+output [REG_INDEX_BIT_WIDTH - 1 : 0] rs1;
+output [REG_INDEX_BIT_WIDTH - 1 : 0] rs2;
+output [ALU_OP_WIDTH - 1 : 0] alu_op;
+output [1 : 0] pc_sel;
+output [1 : 0] rf_wrt_data_sel;
+output [1 : 0] alu_in2_sel;
+output rf_wrt_en
+output mem_wrt_en;
+
+reg [12 : 0] control_signals;
+
+wire [3 : 0] op;
+wire [3 : 0] fn;
+assign {op, fn, rd} = inst[31 : 20];
+
+assign {alu_op, pc_sel, rf_wrt_data_sel, alu_in2_sel, rf_wrt_en, mem_wrt_en} = control_signals;
+
+always @(situation) begin
+    case (situation)
+        9b'	1100	0111	0	: contro_signals <= 13b'	00000	00	00	00	1	0	;
+        9b'	1100	0111	1	: contro_signals <= 13b'	00000	00	00	00	1	0	;
+        9b'	1100	0110	0	: contro_signals <= 13b'	00001	00	00	00	1	0	;
+        9b'	1100	0110	1	: contro_signals <= 13b'	00001	00	00	00	1	0	;
+        9b'	1100	0000	0	: contro_signals <= 13b'	00010	00	00	00	1	0	;
+        9b'	1100	0000	1	: contro_signals <= 13b'	00010	00	00	00	1	0	;
+        9b'	1100	0001	0	: contro_signals <= 13b'	00011	00	00	00	1	0	;
+        9b'	1100	0001	1	: contro_signals <= 13b'	00011	00	00	00	1	0	;
+        9b'	1100	0010	0	: contro_signals <= 13b'	00100	00	00	00	1	0	;
+        9b'	1100	0010	1	: contro_signals <= 13b'	00100	00	00	00	1	0	;
+        9b'	1100	1000	0	: contro_signals <= 13b'	00101	00	00	00	1	0	;
+        9b'	1100	1000	1	: contro_signals <= 13b'	00101	00	00	00	1	0	;
+        9b'	1100	1001	0	: contro_signals <= 13b'	00110	00	00	00	1	0	;
+        9b'	1100	1001	1	: contro_signals <= 13b'	00110	00	00	00	1	0	;
+        9b'	1100	1010	0	: contro_signals <= 13b'	00111	00	00	00	1	0	;
+        9b'	1100	1010	1	: contro_signals <= 13b'	00111	00	00	00	1	0	;
+        9b'	0100	0111	0	: contro_signals <= 13b'	00000	00	00	01	1	0	;
+        9b'	0100	0111	1	: contro_signals <= 13b'	00000	00	00	01	1	0	;
+        9b'	0100	0110	0	: contro_signals <= 13b'	00001	00	00	01	1	0	;
+        9b'	0100	0110	1	: contro_signals <= 13b'	00001	00	00	01	1	0	;
+        9b'	0100	0000	0	: contro_signals <= 13b'	00010	00	00	01	1	0	;
+        9b'	0100	0000	1	: contro_signals <= 13b'	00010	00	00	01	1	0	;
+        9b'	0100	0001	0	: contro_signals <= 13b'	00011	00	00	01	1	0	;
+        9b'	0100	0001	1	: contro_signals <= 13b'	00011	00	00	01	1	0	;
+        9b'	0100	0010	0	: contro_signals <= 13b'	00100	00	00	01	1	0	;
+        9b'	0100	0010	1	: contro_signals <= 13b'	00100	00	00	01	1	0	;
+        9b'	0100	1000	0	: contro_signals <= 13b'	00101	00	00	01	1	0	;
+        9b'	0100	1000	1	: contro_signals <= 13b'	00101	00	00	01	1	0	;
+        9b'	0100	1001	0	: contro_signals <= 13b'	00110	00	00	01	1	0	;
+        9b'	0100	1001	1	: contro_signals <= 13b'	00110	00	00	01	1	0	;
+        9b'	0100	1010	0	: contro_signals <= 13b'	00111	00	00	01	1	0	;
+        9b'	0100	1010	1	: contro_signals <= 13b'	00111	00	00	01	1	0	;
+        9b'	0100	1111	0	: contro_signals <= 13b'	10000	00	00	01	1	0	;
+        9b'	0100	1111	1	: contro_signals <= 13b'	10000	00	00	01	1	0	;
+        9b'	0111	0000	0	: contro_signals <= 13b'	00000	00	01	01	1	0	;
+        9b'	0111	0000	1	: contro_signals <= 13b'	00000	00	01	01	1	0	;
+        9b'	0011	0000	0	: contro_signals <= 13b'	00000	00	00	01	0	1	;
+        9b'	0011	0000	1	: contro_signals <= 13b'	00000	00	00	01	0	1	;
+        9b'	1101	0011	0	: contro_signals <= 13b'	01000	00	00	00	1	0	;
+        9b'	1101	0011	1	: contro_signals <= 13b'	01000	00	00	00	1	0	;
+        9b'	1101	0110	0	: contro_signals <= 13b'	01001	00	00	00	1	0	;
+        9b'	1101	0110	1	: contro_signals <= 13b'	01001	00	00	00	1	0	;
+        9b'	1101	1001	0	: contro_signals <= 13b'	01010	00	00	00	1	0	;
+        9b'	1101	1001	1	: contro_signals <= 13b'	01010	00	00	00	1	0	;
+        9b'	1101	1100	0	: contro_signals <= 13b'	01011	00	00	00	1	0	;
+        9b'	1101	1100	1	: contro_signals <= 13b'	01011	00	00	00	1	0	;
+        9b'	1101	0000	0	: contro_signals <= 13b'	01100	00	00	00	1	0	;
+        9b'	1101	0000	1	: contro_signals <= 13b'	01100	00	00	00	1	0	;
+        9b'	1101	0101	0	: contro_signals <= 13b'	01101	00	00	00	1	0	;
+        9b'	1101	0101	1	: contro_signals <= 13b'	01101	00	00	00	1	0	;
+        9b'	1101	1010	0	: contro_signals <= 13b'	01110	00	00	00	1	0	;
+        9b'	1101	1010	1	: contro_signals <= 13b'	01110	00	00	00	1	0	;
+        9b'	1101	1111	0	: contro_signals <= 13b'	01111	00	00	00	1	0	;
+        9b'	1101	1111	1	: contro_signals <= 13b'	01111	00	00	00	1	0	;
+        9b'	0101	0011	0	: contro_signals <= 13b'	01000	00	00	01	1	0	;
+        9b'	0101	0011	1	: contro_signals <= 13b'	01000	00	00	01	1	0	;
+        9b'	0101	0110	0	: contro_signals <= 13b'	01001	00	00	01	1	0	;
+        9b'	0101	0110	1	: contro_signals <= 13b'	01001	00	00	01	1	0	;
+        9b'	0101	1001	0	: contro_signals <= 13b'	01010	00	00	01	1	0	;
+        9b'	0101	1001	1	: contro_signals <= 13b'	01010	00	00	01	1	0	;
+        9b'	0101	1100	0	: contro_signals <= 13b'	01011	00	00	01	1	0	;
+        9b'	0101	1100	1	: contro_signals <= 13b'	01011	00	00	01	1	0	;
+        9b'	0101	0000	0	: contro_signals <= 13b'	01100	00	00	01	1	0	;
+        9b'	0101	0000	1	: contro_signals <= 13b'	01100	00	00	01	1	0	;
+        9b'	0101	0101	0	: contro_signals <= 13b'	01101	00	00	01	1	0	;
+        9b'	0101	0101	1	: contro_signals <= 13b'	01101	00	00	01	1	0	;
+        9b'	0101	1010	0	: contro_signals <= 13b'	01110	00	00	01	1	0	;
+        9b'	0101	1010	1	: contro_signals <= 13b'	01110	00	00	01	1	0	;
+        9b'	0101	1111	0	: contro_signals <= 13b'	01111	00	00	01	1	0	;
+        9b'	0101	1111	1	: contro_signals <= 13b'	01111	00	00	01	1	0	;
+        9b'	0010	0011	0	: contro_signals <= 13b'	01000	00	00	00	0	0	;
+        9b'	0010	0011	1	: contro_signals <= 13b'	01000	01	00	00	0	0	;
+        9b'	0010	0110	0	: contro_signals <= 13b'	01001	00	00	00	0	0	;
+        9b'	0010	0110	1	: contro_signals <= 13b'	01001	01	00	00	0	0	;
+        9b'	0010	1001	0	: contro_signals <= 13b'	01010	00	00	00	0	0	;
+        9b'	0010	1001	1	: contro_signals <= 13b'	01010	01	00	00	0	0	;
+        9b'	0010	1100	0	: contro_signals <= 13b'	01011	00	00	00	0	0	;
+        9b'	0010	1100	1	: contro_signals <= 13b'	01011	01	00	00	0	0	;
+        9b'	0010	0010	0	: contro_signals <= 13b'	01001	00	00	00	0	0	;
+        9b'	0010	0010	1	: contro_signals <= 13b'	01001	01	00	00	0	0	;
+        9b'	0010	1101	0	: contro_signals <= 13b'	01010	00	00	00	0	0	;
+        9b'	0010	1101	1	: contro_signals <= 13b'	01010	01	00	00	0	0	;
+        9b'	0010	1000	0	: contro_signals <= 13b'	01011	00	00	00	0	0	;
+        9b'	0010	1000	1	: contro_signals <= 13b'	01011	01	00	00	0	0	;
+        9b'	0010	0000	0	: contro_signals <= 13b'	01100	00	00	00	0	0	;
+        9b'	0010	0000	1	: contro_signals <= 13b'	01100	01	00	00	0	0	;
+        9b'	0010	0101	0	: contro_signals <= 13b'	01101	00	00	00	0	0	;
+        9b'	0010	0101	1	: contro_signals <= 13b'	01101	01	00	00	0	0	;
+        9b'	0010	1010	0	: contro_signals <= 13b'	01110	00	00	00	0	0	;
+        9b'	0010	1010	1	: contro_signals <= 13b'	01110	01	00	00	0	0	;
+        9b'	0010	1011	0	: contro_signals <= 13b'	01111	00	00	00	0	0	;
+        9b'	0010	1011	1	: contro_signals <= 13b'	01111	01	00	00	0	0	;
+        9b'	0010	0001	0	: contro_signals <= 13b'	01101	00	00	00	0	0	;
+        9b'	0010	0001	1	: contro_signals <= 13b'	01101	01	00	00	0	0	;
+        9b'	0010	1110	0	: contro_signals <= 13b'	01110	00	00	00	0	0	;
+        9b'	0010	1110	1	: contro_signals <= 13b'	01110	01	00	00	0	0	;
+        9b'	0010	1111	0	: contro_signals <= 13b'	01111	00	00	00	0	0	;
+        9b'	0010	1111	1	: contro_signals <= 13b'	01111	01	00	00	0	0	;
+        9b'	0110	0000	0	: contro_signals <= 13b'	00000	10	10	10	1	0	;
+        9b'	0110	0000	1	: contro_signals <= 13b'	00000	10	10	10	1	0	;
+        default: control_signals <= 13b'0;
+    endcase
+end
+
+endmodule

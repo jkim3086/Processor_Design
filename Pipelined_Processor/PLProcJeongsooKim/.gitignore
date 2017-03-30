@@ -1,0 +1,55 @@
+# ignore resulting images
+*.sof
+*.pof
+
+# ignore SIGASI project
+.project
+.settings
+.library_mapping.xml
+
+# ignore Quartus II generated files
+*sopc_*
+*.jdi
+*.ptf.*
+*.sof
+*.pof
+*.qws
+*.qsys_edit
+*.smsg
+*_inst.vhd
+*_generation_script*
+*.done
+*.qarlog
+*.rpt
+*.summary
+*.qws
+*.cmp
+*.eqn
+*.bak
+*.qar
+*.sopc_builder
+*~
+*.sdc
+*.tcl
+*.pin
+*.hex
+*.cr.mti
+c5_pin_model_dump.txt
+cio_dump_disallowed_lists.echo
+
+# ignore modelsim output
+vsim.wlf
+
+# ignore Quartus II generated folders
+output_files/
+db/
+incremental_db/
+hc_output/
+simulation/
+timing/
+testbench/
+*_sim/
+
+# ignore modelsim library
+work/
+processor/

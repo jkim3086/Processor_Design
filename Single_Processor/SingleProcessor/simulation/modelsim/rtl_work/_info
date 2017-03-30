@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\JK\Desktop\folder\Gatech\2016_Fall\CS3220\Project\3\SCProcChenkaiShao\simulation\modelsim
+vClockDivider
+!i10b 1
+!s100 98NJgHdgd^DBEA48o>D^?3
+IKTAS3j;C7O1L1=4T[GFf=3
+VX_VI_HTXS0nY:m5g>8<J30
+Z1 dC:\Users\JK\Desktop\folder\Gatech\2016_Fall\CS3220\Project\3\SCProcChenkaiShao\simulation\modelsim
+w1478225035
+8C:/Users/JK/Desktop/folder/Gatech/2016_Fall/CS3220/Project/3/SCProcChenkaiShao/ClockDivider.v
+FC:/Users/JK/Desktop/folder/Gatech/2016_Fall/CS3220/Project/3/SCProcChenkaiShao/ClockDivider.v
+L0 1
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1478226624.649000
+!s107 C:/Users/JK/Desktop/folder/Gatech/2016_Fall/CS3220/Project/3/SCProcChenkaiShao/ClockDivider.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/JK/Desktop/folder/Gatech/2016_Fall/CS3220/Project/3/SCProcChenkaiShao|C:/Users/JK/Desktop/folder/Gatech/2016_Fall/CS3220/Project/3/SCProcChenkaiShao/ClockDivider.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+C:/Users/JK/Desktop/folder/Gatech/2016_Fall/CS3220/Project/3/SCProcChenkaiShao -O0
+n@clock@divider

@@ -1,0 +1,305 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1\modelsim_ase\win32aloem
+vAdder
+Z1 !s100 gc6^I`Chf?ePVL^Zkd2Ym0
+Z2 I4]?:T_`Mc2Rnc;k_?zJTM1
+Z3 Vj6hSTTCZZhIBmCzD6iLFC1
+Z4 d\\VBOXSVR\CS3220-Group\Proj2\SCProcChenkaiShao
+Z5 w1478546305
+Z6 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Adder.v
+Z7 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Adder.v
+L0 1
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Adder.v|
+Z10 o-work work -O0
+Z11 n@adder
+Z12 !s108 1478570488.258000
+Z13 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Adder.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vALU
+Z14 !s100 EB3N7LhGFOd2QX`h7AJaG2
+Z15 IYnb5XGVVUGFNAC1AYcPna3
+Z16 V`[m?4bI]9k^GIaCQ][0hQ1
+R4
+Z17 w1478567538
+Z18 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/ALU.v
+Z19 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/ALU.v
+L0 2
+R8
+r1
+31
+Z20 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/ALU.v|
+R10
+Z21 n@a@l@u
+Z22 !s108 1478570488.351000
+Z23 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/ALU.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vClockDivider
+Z24 !s100 c;KDfIeWhX5Y@P6WYJ<4S0
+Z25 ITL_W^^I7V=]LDUaMn=U_`0
+Z26 VIgS><S7X?]6JlYaYm^@NU2
+R4
+R5
+Z27 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/ClockDivider.v
+Z28 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/ClockDivider.v
+L0 1
+R8
+r1
+31
+Z29 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/ClockDivider.v|
+R10
+Z30 n@clock@divider
+Z31 !s108 1478570488.445000
+Z32 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/ClockDivider.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vDataMemory
+Z33 !s100 c`mcb=VZ7]]`azbGQQCTQ0
+Z34 IlTOibG>_DhYTV57_lzDoO0
+Z35 VnY3TN932]7=fiIE?`X:EC3
+R4
+R5
+Z36 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/DataMemory.v
+Z37 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/DataMemory.v
+L0 1
+R8
+r1
+31
+Z38 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/DataMemory.v|
+R10
+Z39 n@data@memory
+Z40 !s108 1478570488.554000
+Z41 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/DataMemory.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vInstMemory
+Z42 !s100 VDeE==T]0zgTga?VYFA_C2
+Z43 I;62h0CG>T68zbcE453=WY0
+Z44 VUJYb>IZO9F_mPNHYd`^832
+R4
+R5
+Z45 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/InstMemory.v
+Z46 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/InstMemory.v
+L0 1
+R8
+r1
+31
+Z47 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/InstMemory.v|
+R10
+Z48 n@inst@memory
+Z49 !s108 1478570488.663000
+Z50 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/InstMemory.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMux2x1
+Z51 !s100 KIc@i^A_Q=KB0PU1aTD0=0
+Z52 IO:kTf1XRiA6V@P@dcEi2V0
+Z53 VhQGH0[:MPoQDKXH69GfL>3
+R4
+R5
+Z54 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux2x1.v
+Z55 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux2x1.v
+L0 1
+R8
+r1
+31
+Z56 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux2x1.v|
+R10
+Z57 n@mux2x1
+Z58 !s108 1478570488.757000
+Z59 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux2x1.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMux4x1
+Z60 !s100 gA5bGA?h6m895U51j?IG;1
+Z61 IERRIm@a=ONe]:@aj5X@S00
+Z62 V61ZQZb@LiTVWBiG<kGE5c3
+R4
+R5
+Z63 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux4x1.v
+Z64 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux4x1.v
+L0 1
+R8
+r1
+31
+Z65 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux4x1.v|
+R10
+Z66 n@mux4x1
+Z67 !s108 1478570488.866000
+Z68 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Mux4x1.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vProject2
+Z69 I7:lVc?^BdJCE]ia0aNcLm1
+Z70 VU;775d1elFM0_7ec9@Y`90
+R4
+Z71 w1478570482
+Z72 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Project2.v
+Z73 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Project2.v
+L0 1
+R8
+r1
+31
+Z74 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Project2.v|
+R10
+Z75 n@project2
+Z76 !s100 L_@oSN7W<>e9I6TQiTBm[2
+Z77 !s108 1478570488.961000
+Z78 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Project2.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vRegFile
+Z79 !s100 lI:VN808BZW;EoU@A8D2:1
+Z80 IWfz<:AnUV@`I3S>?3MD:Y3
+Z81 V@?3:jNGB4lcaUmd>L8ebU1
+R4
+R5
+Z82 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/RegFile.v
+Z83 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/RegFile.v
+L0 1
+R8
+r1
+31
+Z84 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/RegFile.v|
+R10
+Z85 n@reg@file
+Z86 !s108 1478570489.054000
+Z87 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/RegFile.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vRegister
+Z88 !s100 `mRd@Z@3U[L^hZP_980`[1
+Z89 IV<WA9GK2n0mUGS>ZAZ4]^3
+Z90 VcF=KTBfmNkUbE2U153[EE2
+R4
+R5
+Z91 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Register.v
+Z92 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Register.v
+L0 1
+R8
+r1
+31
+Z93 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Register.v|
+R10
+Z94 n@register
+Z95 !s108 1478570489.148000
+Z96 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Register.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vSCProc_tb
+Z97 !s100 eS4Z]YBK7gJ=MRzXm4M812
+Z98 I3_k:T]d9^DWXhl2<99zl01
+Z99 V<Qh:HoIV^NKRSQ@cY8S1J1
+R4
+Z100 w1478562422
+Z101 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SCProc_tb.v
+Z102 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SCProc_tb.v
+L0 3
+R8
+r1
+31
+Z103 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SCProc_tb.v|
+R10
+Z104 n@s@c@proc_tb
+Z105 !s108 1478570489.241000
+Z106 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SCProc_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vSCProcController
+Z107 !s100 M_9Jl4NoQZR5HP5d^Z_]l3
+Z108 IQJ;?Z6PBPUIcijVFdT2n[1
+Z109 VeMYE?TaNnO_1M6nOOWbg;1
+R4
+Z110 w1478569451
+Z111 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SCProcController.v
+Z112 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SCProcController.v
+L0 1
+R8
+r1
+31
+Z113 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SCProcController.v|
+R10
+Z114 n@s@c@proc@controller
+Z115 !s108 1478570489.335000
+Z116 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SCProcController.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vSevenSeg
+Z117 !s100 jC4WHX=B^W5DUlV51WXW;3
+Z118 I<_bk[1EbEekODaRMJGKnU0
+Z119 VKZQ;?2zCF>`gI56YS>C7c1
+R4
+R5
+Z120 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SevenSeg.v
+Z121 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SevenSeg.v
+L0 1
+R8
+r1
+31
+Z122 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SevenSeg.v|
+R10
+Z123 n@seven@seg
+Z124 !s108 1478570489.445000
+Z125 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SevenSeg.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vShifter
+Z126 !s100 7W>GFN@H8]SJcO0C;1Gj10
+Z127 I`d^Yio[JfG;=U7jbR@L3K1
+Z128 VgYTAHV]ZBH3=aheRoF^]F0
+R4
+R5
+Z129 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Shifter.v
+Z130 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Shifter.v
+L0 1
+R8
+r1
+31
+Z131 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Shifter.v|
+R10
+Z132 n@shifter
+!i10b 1
+!s85 0
+Z133 !s108 1478570489.539000
+Z134 !s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/Shifter.v|
+!s101 -O0
+vSignExtension
+!i10b 1
+Z135 !s100 G59;Ydfd]fGidz]:2JPj30
+Z136 IXTF4hG^z=7J_`mVoJ[BCN1
+Z137 V4dfZnVj2jB=k4[_jW314B1
+R4
+R5
+Z138 8//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SignExtension.v
+Z139 F//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SignExtension.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1478570489.647000
+!s107 //VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SignExtension.v|
+Z140 !s90 -reportprogress|300|-work|work|//VBOXSVR/CS3220-Group/Proj2/SCProcChenkaiShao/SignExtension.v|
+!s101 -O0
+R10
+Z141 n@sign@extension

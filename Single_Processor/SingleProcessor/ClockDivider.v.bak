@@ -1,0 +1,28 @@
+module ClockDivider (
+	//nclk0,
+	CLOCK_50,
+	c0,
+	locked);
+
+	//input	  inclk0;
+	input CLOCK_50;
+	output reg c0 = 0;
+	output	  locked; // clock is paused when locked is 1
+	
+    reg [31:0] count_100hz = 500000;
+	always @(posedge CLOCK_50) begin
+		if(locked) begin
+			count_100hz = 500000;
+		end		
+		else if(count_100hz == 0) begin
+			c0 <= ~c0;
+			count_100hz <= 500000;
+		end
+		count_100hz <= count_100hz - 1;
+	end
+
+  // Implement this yourself
+  // Slow down the clock to ensure the cycle is long enough for all operations to execute
+  // If you don't, you might get weird errors
+
+endmodule
