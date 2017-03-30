@@ -3,8 +3,7 @@ Designed and Built a fully functioning single and pipelined processors in Verilo
 
 ## Assembler
 - Generate mif file using assembly file as an input file.
-### Command
-python Assembler.py <input-Assembly-file> <Name-of-Ouput-File>
+- python Assembler.py >input Assembly file >Name of Ouput File>
 
 ## Single Processor
 - 
